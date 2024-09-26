@@ -1,0 +1,54 @@
+environment: local
+server:
+  port: 9002
+  host: http://localhost
+  url: http://localhost:9002
+
+swagger:
+  title: EDU CHECK API
+  description: The Edu Check API description
+  version: v1
+  uri: /api/docs*
+  path: api/docs
+  bearerAuth:
+    options:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  swaggerOptions:
+    docExpansion: none
+  pathJson: swagger/swagger.json
+  auth:
+    challenge: true
+    users:
+      educheck: educheck123
+
+postgres:
+  type: postgres # Database type
+  host: dpg-crqhvgg8fa8c7392e7mg-a.oregon-postgres.render.com # Replace with your PostgreSQL host
+  port: 5432 # Replace with your PostgreSQL port
+  username: educheck_user # Replace with your PostgreSQL username
+  password: arnGYUsGiQZl71IklSpkPK8oHCQv6PK4 # Replace with your PostgreSQL password
+  database: educheck # Replace with your PostgreSQL database name
+  synchronize: true # Set to false for production (use migrations instead)
+  logging: false
+  autoLoadEntities: true
+  cache: false
+  entities: /dist/modules/*.entity.js
+  seeds: /dist/seeds/*.seeder.js
+
+i18n:
+  fallbackLanguage: en
+  fallbacks:
+    en-*: en
+    vi-*: vi
+
+jwt:
+  accessToken:
+    secret: accessToken1@
+    signOptions:
+      expiresIn: 1d
+  refreshToken:
+    secret: refreshToken1@
+    signOptions:
+      expiresIn: 7d
