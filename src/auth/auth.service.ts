@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   async validateUser(username: string, password: string) {
-    await this.baseService.ValidatePassword(password);
+    // await this.baseService.ValidatePassword(password);
 
     const user = await this.userService.findOne({
       where: [
