@@ -1,0 +1,14 @@
+{
+  "ACTION": {
+    "CREATE": "Create {name} successfully.",
+    "UPDATE": "Update {name} successfully.",
+    "DELETE": "Delete {name} successfully.",
+    "ACTIVE": "Activated {name} successfully.",
+    "INACTIVE": "Deactivate {name} successfully.",
+    "CHANGE_STATUS": "Change to status {name} successfully."
+  },
+  "AUTH": {
+    "UNAUTHORIZED": "Not have access!",
+    "AUTHORIZED": "Login successfully."
+  }
+}
