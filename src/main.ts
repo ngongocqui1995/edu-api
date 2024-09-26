@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { AppConfig } from 'src/config/configuration';
-import * as BasicAuth from 'express-basic-auth';
+// import * as BasicAuth from 'express-basic-auth';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { BearerAuthName } from 'src/common/enum';
 import * as fs from 'fs';
@@ -17,7 +17,7 @@ async function bootstrap() {
   const server = configService.get<AppConfig['server']>('server');
   const swagger = configService.get<AppConfig['swagger']>('swagger');
 
-  app.use(swagger.uri, BasicAuth(swagger.auth));
+  // app.use(swagger.uri, BasicAuth(swagger.auth));
 
   const options = new DocumentBuilder()
     .setTitle(swagger.title)
